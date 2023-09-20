@@ -9363,3 +9363,21 @@ workload/share/jupyter/kernels/python3/logo-32x32.png
 workload/share/jupyter/kernels/python3/logo-64x64.png
 workload/share/jupyter/kernels/python3/logo-svg.svg
 workload/share/man/man1/ipython.1
+08404.xlsx
+main.py
+workload_calc.spec
+__pycache__/workload_calc.cpython-36.pyc
+__pycache__/workload_calc.cpython-310.pyc
+build/workload_calc/Analysis-00.toc
+build/workload_calc/base_library.zip
+build/workload_calc/EXE-00.toc
+build/workload_calc/PKG-00.toc
+build/workload_calc/PYZ-00.pyz
+build/workload_calc/PYZ-00.toc
+build/workload_calc/Tree-00.toc
+build/workload_calc/Tree-01.toc
+build/workload_calc/warn-workload_calc.txt
+build/workload_calc/workload_calc.pkg
+build/workload_calc/xref-workload_calc.html
+build/workload_calc/localpycos/struct.pyo
+dist/084 июль.xlsx
