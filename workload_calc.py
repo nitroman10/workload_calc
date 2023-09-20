@@ -219,7 +219,7 @@ def set_single_theme_load_vectors(table):
 
 
 def main():
-    
+    #comment    
 
 
     workfield = get_workfield()
