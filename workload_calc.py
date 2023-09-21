@@ -38,9 +38,9 @@ def get_value_name_column(worksheet, name, column_n):
     return(worksheet.cell(names.index(name) + min_row, column_n).value)
 
 
-def get_workfield(worksheet, min_row, max_row, min_col, max_col):
+def get_workfield():
     work_field = []
-    for i, row in enumerate(worksheet.iter_rows(min_row, max_row)):
+    for i, row in enumerate(sheet.iter_rows(min_row, max_row)):
         work_field.append([cell.value for cell in row]
                           [min_col - 1: max_col])
     return work_field
@@ -202,7 +202,7 @@ def set_single_theme_load_vectors(table):
 
 
 def main():
-    # comment
+    global themes_qty, names_qty, filepath, workbook, sheet, min_row, max_row, min_col, max_col, tab_worktime_vector, themes_load_vector, main_workbook, main_worksheet
     filepath = '084.xlsx'
 
     workbook = opxl.load_workbook(filepath, data_only=True)
@@ -229,15 +229,14 @@ def main():
     themes_qty = len(themes)
     names_qty = len(names)
 
-    workfield = np.array(get_workfield(
-        sheet, min_row, max_row, min_col, max_col))
+    workfield = np.array(get_workfield())
     workfield = set_aver_load_field(workfield, themes_load_vector, names)
     workfield = set_none_to_zero(workfield)
 
     workfield = set_single_theme_load_vectors(workfield)
-    # workfield = balance_workfield(workfield)
-    for _ in range(10):
-        workfield = balance_workfield(workfield)
+    workfield = balance_workfield(workfield)
+    # for _ in range(10):
+    #     workfield = balance_workfield(workfield)
     # for _ in range(20):
     # workfield = round_field(workfield)
     print(*workfield[8:9], sep='\n\n', end='\n\n')
