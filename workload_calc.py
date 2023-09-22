@@ -84,7 +84,7 @@ def print_overall_load():
     print(s)
 
 
-def set_aver_load_field(table, themes_load_vector, names):
+def set_aver_load_field(table):
 
     for j, load in enumerate(themes_load_vector):
         aver_load = []
@@ -202,7 +202,7 @@ def set_single_theme_load_vectors(table):
 
 
 def main():
-    global themes_qty, names_qty, filepath, workbook, sheet, min_row, max_row, min_col, max_col, tab_worktime_vector, themes_load_vector, main_workbook, main_worksheet
+    global themes_qty, names_qty, filepath, workbook, sheet, names, themes,  min_row, max_row, min_col, max_col, tab_worktime_vector, themes_load_vector, main_workbook, main_worksheet
     filepath = '084.xlsx'
 
     workbook = opxl.load_workbook(filepath, data_only=True)
@@ -230,7 +230,7 @@ def main():
     names_qty = len(names)
 
     workfield = np.array(get_workfield())
-    workfield = set_aver_load_field(workfield, themes_load_vector, names)
+    workfield = set_aver_load_field(workfield)
     workfield = set_none_to_zero(workfield)
 
     workfield = set_single_theme_load_vectors(workfield)
